@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Mini Message Board</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="main">
+      <a class="card" href="/new">
+        <h1>Create New Message</h1>
+      </a>
+
+      <% messages.forEach(function(message) { %>
+      <div class="card">
+        <h2><%= message.title %></h2>
+        <p><%= message.text %></p>
+        <hr />
+        <div class="card-footer">
+          <span class="text-mute"><%= message.user %></span>
+          <!-- TODO: Process Message Date -->
+          <span><%= message.added %></span>
+        </div>
+      </div>
+      <% }); %>
+    </div>
   </body>
 </html>

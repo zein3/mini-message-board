@@ -1,8 +1,67 @@
+:root {
+  --grey: #DCDCDC;
+  --blue: #00B7FF;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--grey);
 }
 
 a {
-  color: #00B7FF;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+hr {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+.card {
+  color: black;
+  display: flex;
+  flex-flow: column nowrap;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  padding: 2rem;
+  margin-bottom: 1.2rem;
+  background-color: white;
+}
+
+.card > h1 {
+  color: var(--blue);
+}
+
+.card-footer {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.text-mute {
+  color: grey;
+  font-size: 0.7rem;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 0.7rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+@media only screen and (min-width: 992px) {
+  .card {
+    width: 60%;
+  }
 }

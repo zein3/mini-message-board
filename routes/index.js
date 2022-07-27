@@ -1,9 +1,25 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+const messages = [
+  {
+    title: 'Hello',
+    text: 'Hello, my name is Bob',
+    user: 'Bob',
+    added: new Date()
+  },
+  {
+    title: 'Hi!',
+    text: 'Hi! My name is Susan',
+    user: 'Susan',
+    added: new Date()
+  }
+];
+
+router.get('/', (req, res) => {
+  res.render('index', {
+    messages
+  });
 });
 
 module.exports = router;
