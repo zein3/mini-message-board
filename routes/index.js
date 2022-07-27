@@ -1,22 +1,12 @@
 var express = require('express');
 var router = express.Router();
+const Message = require('../models/message');
 
-const messages = [
-  {
-    title: 'Hello',
-    text: 'Hello, my name is Bob',
-    user: 'Bob',
-    added: new Date()
-  },
-  {
-    title: 'Hi!',
-    text: 'Hi! My name is Susan',
-    user: 'Susan',
-    added: new Date()
-  }
-];
+router.get('/', async (req, res) => {
+  const messages = await Message.findAll({
+    order: [['updatedAt', 'DESC']]
+  });
 
-router.get('/', (req, res) => {
   res.render('index', {
     messages
   });

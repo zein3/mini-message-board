@@ -13,12 +13,12 @@
       <% messages.forEach(function(message) { %>
       <div class="card">
         <h2><%= message.title %></h2>
-        <p><%= message.text %></p>
+        <p><%= message.message %></p>
         <hr />
         <div class="card-footer">
           <span class="text-mute"><%= message.user %></span>
           <!-- TODO: Process Message Date -->
-          <span><%= message.added %></span>
+          <span><%= message.createdAt %></span>
         </div>
       </div>
       <% }); %>
